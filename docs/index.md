@@ -13,6 +13,7 @@ Download the **mousemover-&lt;version&gt;.jar** file from the latest release, an
 
 
 ## Added Dark Theme
+Looks nicer than the default theme.
 
 ![Dark Theme](https://mousemoverapp.github.io/mousemover/images/dark-theme.png)
 

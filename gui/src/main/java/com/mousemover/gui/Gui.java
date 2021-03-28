@@ -15,6 +15,8 @@ import static javax.swing.BoxLayout.Y_AXIS;
 
 public class Gui extends JFrame {
 
+    public static final Color GREEN = new Color(62, 112, 58);
+    public static final Color RED = new Color(122, 16, 16);
     private final Mover mover = new Mover();
     private final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 
@@ -173,7 +175,7 @@ public class Gui extends JFrame {
         try {
             final Status status = mover.isRunning() ? Status.RUNNING : Status.STOPPED;
             statusLabel.setText(status.name());
-            statusLabel.setBackground(status == Status.RUNNING ? Color.GREEN : Color.RED);
+            statusLabel.setBackground(status == Status.RUNNING ? GREEN : RED);
 
             final long timeRemaining = scheduledFuture == null || scheduledFuture.isCancelled() ? 0 : scheduledFuture.getDelay(TimeUnit.SECONDS);
             final long secondsRemaining = timeRemaining % 60;

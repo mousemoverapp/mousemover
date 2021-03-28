@@ -1,19 +1,24 @@
 package com.mousemover.gui.application;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import com.mousemover.gui.Gui;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.File;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class GuiRunner {
 
 
     public static void main(String[] args) {
 
-        final String name = getJarName();
+        try {
+            UIManager.setLookAndFeel( new FlatDarkLaf() );
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize LaF" );
+        }
 
+        final String name = getJarName();
 
         EventQueue.invokeLater(() -> new Gui(name).setVisible(true));
     }

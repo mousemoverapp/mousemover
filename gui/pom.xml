@@ -17,5 +17,10 @@
             <artifactId>mover</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+        </dependency>
     </dependencies>
 </project>

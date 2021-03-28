@@ -4,6 +4,7 @@ layout: default
 
 
 ## [Download Now!](https://github.com/mousemoverapp/mousemover/releases)
+
 Download the **mousemover-&lt;version&gt;.jar** file from the latest release, and double click the downloaded file to run.
 
 ![Download](https://mousemoverapp.github.io/mousemover/images/download.png)

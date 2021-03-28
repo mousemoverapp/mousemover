@@ -2,7 +2,8 @@
 layout: default
 ---
 
-#### Mouse Mover
+## Mouse Mover
+A simple app which moves your mouse around automatically. Prevents your computer from going to sleep, being logged off from remote sessions etc. while you are away from the keyboard.
 
 ## [Click here to download now!](https://github.com/mousemoverapp/mousemover/releases)
 

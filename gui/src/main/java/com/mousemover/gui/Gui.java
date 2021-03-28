@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -162,6 +163,16 @@ public class Gui extends JFrame {
         timePeriodButtonGroup = new ButtonGroup();
         timePeriodButtonGroup.add(secondsButton);
         timePeriodButtonGroup.add(minutesButton);
+
+        final JPanel settingsPanel = new JPanel();
+        final URL resource = getClass().getClassLoader().getResource("images/settings.png");
+        final ImageIcon image = new ImageIcon(resource);
+        final JLabel settingsWrapper = new JLabel(image);
+        settingsWrapper.setPreferredSize(new Dimension(31, 29));
+//        settingsPanel.addListener
+        settingsPanel.add(settingsWrapper);
+        settingsPanel.add(new JLabel("Settings"));
+        inputFields.add(settingsPanel);
 
         return inputFields;
     }

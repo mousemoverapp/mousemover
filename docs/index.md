@@ -2,6 +2,7 @@
 layout: default
 ---
 
+### Mouse Mover
 
 ## [Download Now!](https://github.com/mousemoverapp/mousemover/releases)
 

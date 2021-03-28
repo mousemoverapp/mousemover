@@ -2,9 +2,9 @@
 layout: default
 ---
 
-### Mouse Mover
+#### Mouse Mover
 
-## [Download Now!](https://github.com/mousemoverapp/mousemover/releases)
+## [Click here to download now!](https://github.com/mousemoverapp/mousemover/releases)
 
 Download the **mousemover-&lt;version&gt;.jar** file from the latest release, and double click the downloaded file to run.
 

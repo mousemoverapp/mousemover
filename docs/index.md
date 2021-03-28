@@ -12,6 +12,9 @@ Download the **mousemover-&lt;version&gt;.jar** file from the latest release, an
 ![Download](https://mousemoverapp.github.io/mousemover/images/download.png)
 
 
+## Added Dark Theme
+
+![Dark Theme](https://mousemoverapp.github.io/mousemover/images/dark-theme.png)
 
 
 ## Renaming the window 

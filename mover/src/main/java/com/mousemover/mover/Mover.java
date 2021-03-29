@@ -5,10 +5,10 @@ import java.awt.*;
 public class Mover {
 
     private static final Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private static final int WIDTH = (int) (screenSize.getWidth() - 20);
-    private static final int HEIGHT = (int) (screenSize.getHeight() - 20);
-    private int x = WIDTH/2;
-    private int y = HEIGHT/2;
+    private static final int WIDTH = (int) (screenSize.getWidth());
+    private static final int HEIGHT = (int) (screenSize.getHeight());
+    private int x;
+    private int y;
     private int xModifier = 1;
     private int yModifier = 1;
 
@@ -18,7 +18,7 @@ public class Mover {
     public void start() throws AWTException, InterruptedException {
 
         running = true;
-        final long waitPeriod = 300;
+        final long waitPeriod = 50;
 
         moverThread = new Thread(() -> {
 
@@ -36,9 +36,9 @@ public class Mover {
                     return;
                 }
 
-                if (i % 10 < 5) {
-                    robot.mouseMove(x, y);
+                if (i % 30 < 15) {
                     updateCoordinates();
+                    robot.mouseMove(x, y);
                 }
 
                 try {
@@ -56,13 +56,18 @@ public class Mover {
     }
 
     private void updateCoordinates() {
-        final int delta = 10;
+        final int delta = 2;
+
+        final Point cursorLocation = MouseInfo.getPointerInfo().getLocation();
+        x = (int) cursorLocation.getX();
+        y = (int) cursorLocation.getY();
+
         x += (delta * xModifier);
         y += (delta * yModifier);
-        if (x > WIDTH || x < 20) {
+        if (x > WIDTH || x < 0) {
             xModifier *= -1;
         }
-        if (y > HEIGHT || y < 20) {
+        if (y > HEIGHT || y < 0) {
             yModifier *= -1;
         }
     }

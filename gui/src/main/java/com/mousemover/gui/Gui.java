@@ -172,7 +172,7 @@ public class Gui extends JFrame {
 //        settingsPanel.addListener
         settingsPanel.add(settingsWrapper);
         settingsPanel.add(new JLabel("Settings"));
-        inputFields.add(settingsPanel);
+//        inputFields.add(settingsPanel);
 
         return inputFields;
     }
@@ -188,7 +188,8 @@ public class Gui extends JFrame {
             statusLabel.setText(status.name());
             statusLabel.setBackground(status == Status.RUNNING ? GREEN : RED);
 
-            final long timeRemaining = scheduledFuture == null || scheduledFuture.isCancelled() ? 0 : scheduledFuture.getDelay(TimeUnit.SECONDS);
+            boolean taskNoLongerRunning = scheduledFuture == null || scheduledFuture.isCancelled() || scheduledFuture.isDone();
+            final long timeRemaining = taskNoLongerRunning ? 0 : scheduledFuture.getDelay(TimeUnit.SECONDS);
             final long secondsRemaining = timeRemaining % 60;
             final long minutesRemaining = (timeRemaining / 60) % 60;
             final long hoursRemaining = timeRemaining / 60 / 60;
